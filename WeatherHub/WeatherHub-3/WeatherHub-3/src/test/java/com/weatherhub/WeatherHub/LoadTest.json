@@ -1,0 +1,62 @@
+{
+	"id": "4a5c72eb-e9e6-4914-8cb7-5751017a331c",
+	"name": "Load Test",
+	"timestamp": "2024-01-18T16:12:23.067Z",
+	"collection_id": "32425905-68159125-f355-4aa4-83e5-7fdff01cda02",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": "10",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-01-18T16:12:22.006Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "d7a5f00f-d198-4845-9b6e-90b2984be7b0",
+			"name": "New Request",
+			"url": "http://localhost:8080/weather/Bursa",
+			"time": 55,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				117,
+				59,
+				59,
+				59,
+				57,
+				61,
+				100,
+				58,
+				57,
+				55
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		}
+	],
+	"count": 10,
+	"totalTime": 682,
+	"collection": {
+		"requests": [
+			{
+				"id": "d7a5f00f-d198-4845-9b6e-90b2984be7b0",
+				"method": "GET"
+			}
+		]
+	}
+}
