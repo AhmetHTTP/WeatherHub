@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu Arayüzü</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #weatherForm {
+            margin-bottom: 20px;
+        }
+
+        #weatherResult {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<h1>Hava Durumu Sorgulama</h1>
+<form id="weatherForm">
+    <label for="cityName">Şehir Adı:</label>
+    <input type="text" id="cityName" name="cityName" required>
+    <button type="submit">Sorgula</button>
+</form>
+
+<div id="weatherResult"></div>
+
+<script>
+    document.getElementById('weatherForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var city = document.getElementById('cityName').value;
+        var apiUrl = 'http://localhost:8080/weather/';
+
+        fetch(apiUrl + city)
+            .then(response => response.json())
+            .then(data => {
+                var resultHTML = '';
+                data.forEach(function(weather) {
+                    resultHTML += '<div><strong>' + city + '</strong><br>';
+                    resultHTML += 'Sıcaklık: ' + weather.todays_weather.today.temp + '°C<br>';
+                    resultHTML += 'Basınç: ' + weather.todays_weather.today.pressure + ' hPa<br>';
+                    resultHTML += 'Nem: ' + weather.todays_weather.today.humidity + '%<br>';
+                    resultHTML += 'Hava Durumu: ' + weather.todays_weather.today.main + ' - ' + weather.todays_weather.today.description + '</div><br>';
+                });
+                document.getElementById('weatherResult').innerHTML = resultHTML;
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+            });
+    });
+</script>
+</body>
+</html>

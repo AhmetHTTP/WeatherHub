@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div>
+                <form class="search" id="search">
+                    <input type="text" id="sehirInput" placeholder="Search..." />
+                    <button type="button" onclick="havaDurumuKontrol('today')"><i class="fas fa-search"></i></button>
+                </form>
+                
+                <div class="temperature">
+                    <h1 id="temp">0</h1>
+                    <span>°C</span>
+                </div>
+                <div class="date-time">
+                    <p id="date-time">Monday, 12:00</p>
+                </div>
+
+                <script>
+                   //GÜNCEL GÜN VE SAATİ GETİRME SCRİPTİ
+                    var dateTimeElementi = document.getElementById("date-time");
+            
+                    var currentDate = new Date();
+                    var dayOfWeek = getDayOfWeek(currentDate.getDay());
+                    var currentTime = getCurrentTime(currentDate.getHours(), currentDate.getMinutes());
+            
+                    var dateTimeText = dayOfWeek + ", " + currentTime;
+            
+                    dateTimeElementi.innerHTML = dateTimeText;
+            
+                    function getDayOfWeek(dayIndex) {
+                        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                        return days[dayIndex];
+                    }
+            
+                    function getCurrentTime(hours, minutes) {
+                        var formattedHours = hours < 10 ? "0" + hours : hours;
+                        var formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+                        return formattedHours + ":" + formattedMinutes;
+                    }
+                </script>
+
+                <div class="divider"></div>
+                <div class="condition-rain">
+                    <h3>We have a music suggestion for you</h3>
+                    <div class="condition">
+                        
+                        <i class="fas fa-cloud"></i>
+                        
+                        <p style="margin-left: 25px;" id="url" ></p>
+                    </div>
+                    <div class="rain">
+                        <i class="fas fa-tint"></i>
+                        <p style="font-size: 20px; margin-left:10px;" id="genre"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="location">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <nav>
+                <ul class="options">
+                    <button class="hourly" onclick="havaDurumuKontrol('today')">Today</button>
+                    <button class="week active" onclick="havaDurumuKontrol('week')">Week</button>
+                </ul>
+                <ul class="options units">
+                    <button class="celcius active">°C</button>
+                    <button class="fahrenheit">°F</button>
+                </ul>
+            </nav>
+            <div class="cards" id="weather-cards"></div>
+            <div class="highlights">
+                <h2 id="selectedCity" >Today's Highlights</h2>
+                <div class="cards"> 
+                    <div class="card2">
+                        <h4 class="card-heading">Humidity</h4>
+                        <div class="content">
+                            <p id="humidity">0</p>
+                            <p class="humidity-status">Normal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card2">
+                        <h4 class="card-heading">Pressure</h4>
+                        <div class="content">
+                            <p id="pressure">0</p>
+                            <p>hPa</p>
+                        </div>
+                    </div>
+                    <div class="card2 unique-card">
+                        <h4 class="card-heading">Min-Max Temperature</h4>
+                        <div class="content">
+                            <p id="temp_min"></p>
+                            <span class="min-max-separator">-</span>
+                            <p id="temp_max"></p>
+                        </div>
+                    </div>                                        
+                    </div>
+                    <div class="card2">
+                        <h4 class="card-heading">Main</h4>
+                        <div class="content">
+                            <p id="durum">0</p>
+                            <p id="description">description</p>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <h4 class="card-heading">Music Recommendation</h4>
+                        <div class="content">
+                            <p id="name"></p>
+                            <p id="genre"></p>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
