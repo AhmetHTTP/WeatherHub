@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.weatherhub.WeatherHub.unit.TestService.RadioStationServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.029 s <<< FAILURE! -- in com.weatherhub.WeatherHub.unit.TestService.RadioStationServiceTest
+com.weatherhub.WeatherHub.unit.TestService.RadioStationServiceTest.testGetRecommendedStations_ClearWeather -- Time elapsed: 0.014 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.weatherhub.WeatherHub.services.RadioStationServiceImpl.getRecommendedStations(String)" because "this.radioStationService" is null
+	at com.weatherhub.WeatherHub.unit.TestService.RadioStationServiceTest.testGetRecommendedStations_ClearWeather(RadioStationServiceTest.java:28)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.weatherhub.WeatherHub.unit.TestService.RadioStationServiceTest.testGetRecommendedStations_RainyWeather -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.weatherhub.WeatherHub.services.RadioStationServiceImpl.getRecommendedStations(String)" because "this.radioStationService" is null
+	at com.weatherhub.WeatherHub.unit.TestService.RadioStationServiceTest.testGetRecommendedStations_RainyWeather(RadioStationServiceTest.java:44)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

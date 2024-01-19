@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+Test set: com.weatherhub.WeatherHub.integration.IntegrationTestService.SearchServiceIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.134 s <<< FAILURE! -- in com.weatherhub.WeatherHub.integration.IntegrationTestService.SearchServiceIntegrationTest
+com.weatherhub.WeatherHub.integration.IntegrationTestService.SearchServiceIntegrationTest.testSearchWeather -- Time elapsed: 0.131 s <<< ERROR!
+org.springframework.web.client.HttpClientErrorException$NotFound: 404 Not Found: "{"cod":"404","message":"city not found"}"
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:112)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:183)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:137)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:932)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:881)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:781)
+	at org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:395)
+	at com.weatherhub.WeatherHub.services.CurrentWeatherService.getCurrentWeather(CurrentWeatherService.java:20)
+	at com.weatherhub.WeatherHub.services.SearchService.searchWeather(SearchService.java:21)
+	at com.weatherhub.WeatherHub.integration.IntegrationTestService.SearchServiceIntegrationTest.testSearchWeather(SearchServiceIntegrationTest.java:35)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

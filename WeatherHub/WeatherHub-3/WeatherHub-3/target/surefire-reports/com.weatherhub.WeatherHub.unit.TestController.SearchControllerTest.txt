@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.weatherhub.WeatherHub.unit.TestController.SearchControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.027 s <<< FAILURE! -- in com.weatherhub.WeatherHub.unit.TestController.SearchControllerTest
+com.weatherhub.WeatherHub.unit.TestController.SearchControllerTest.testGetWeather_GenericException -- Time elapsed: 0.003 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Checked exception is invalid for this method!
+Invalid: java.lang.Exception: Something went wrong
+	at com.weatherhub.WeatherHub.unit.TestController.SearchControllerTest.testGetWeather_GenericException(SearchControllerTest.java:66)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

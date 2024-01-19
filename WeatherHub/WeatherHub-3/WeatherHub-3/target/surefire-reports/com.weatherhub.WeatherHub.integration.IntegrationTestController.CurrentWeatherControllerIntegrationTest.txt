@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+Test set: com.weatherhub.WeatherHub.integration.IntegrationTestController.CurrentWeatherControllerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.274 s <<< FAILURE! -- in com.weatherhub.WeatherHub.integration.IntegrationTestController.CurrentWeatherControllerIntegrationTest
+com.weatherhub.WeatherHub.integration.IntegrationTestController.CurrentWeatherControllerIntegrationTest.testGetCurrentWeather -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalArgumentException: Not enough variable values available to expand 'city'
+	at org.springframework.web.util.UriComponents$VarArgsTemplateVariables.getValue(UriComponents.java:370)
+	at org.springframework.web.util.UriComponents.expandUriComponent(UriComponents.java:263)
+	at org.springframework.web.util.HierarchicalUriComponents$FullPathComponent.expand(HierarchicalUriComponents.java:911)
+	at org.springframework.web.util.HierarchicalUriComponents.expandInternal(HierarchicalUriComponents.java:440)
+	at org.springframework.web.util.HierarchicalUriComponents.expandInternal(HierarchicalUriComponents.java:53)
+	at org.springframework.web.util.UriComponents.expand(UriComponents.java:172)
+	at org.springframework.web.util.UriComponentsBuilder.buildAndExpand(UriComponentsBuilder.java:474)
+	at org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder.initUri(MockHttpServletRequestBuilder.java:156)
+	at org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder.<init>(MockHttpServletRequestBuilder.java:148)
+	at org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get(MockMvcRequestBuilders.java:56)
+	at com.weatherhub.WeatherHub.integration.IntegrationTestController.CurrentWeatherControllerIntegrationTest.testGetCurrentWeather(CurrentWeatherControllerIntegrationTest.java:40)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
